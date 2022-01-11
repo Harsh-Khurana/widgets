@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Accordion from "./Accordion";
 import Search from "./Search";
 import Dropdown from "./Dropdown";
+import Translate from "./Translate";
 import Exercise from "./Exercise";
 
 const items = [
@@ -36,26 +37,9 @@ const options = [
 ];
 
 const App = () => {
-  const [selected, setSelected] = useState(options[0]);
-  const [showDropdown, setShowDropdown] = useState(true);
-  const output = (
-    <p style={{ color: selected.value }}>The text color is {selected.value}</p>
-  );
-
   return (
     <div style={{ margin: "10px" }}>
-      <button onClick={() => setShowDropdown(!showDropdown)}>
-        Toggle Dropdown
-      </button>
-      {showDropdown ? (
-        <Dropdown
-          label="Select a color"
-          options={options}
-          selected={selected}
-          setSelected={setSelected}
-          output={output}
-        />
-      ) : null}
+      <Translate />
     </div>
   );
 };
